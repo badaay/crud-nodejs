@@ -1,6 +1,5 @@
 // controller.js
 // Logic behind the functionalities
-const data = require("./data");
 const Contact = require('./contacts');
 
 class Controller {
@@ -84,8 +83,8 @@ class Controller {
     async deleteContact(id) {
         return new Promise((resolve, reject) => {
 
-            // console.log({ email: id });
-            new Contact().deleteOne({ email: id });
+            Contact.deleteMany({ email: id }, function (err) {
+            });
         });
     }
 }
